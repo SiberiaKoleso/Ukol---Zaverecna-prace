@@ -7,30 +7,34 @@
 
 using namespace std;
 
-
 void zobrazMenu() {
     cout << "==========================================" << endl;
-    cout << "  KRONIKY AETHELGARDU: STIN KRALE CUTALOTA " << endl;
+    cout << "  KRONIKY BEROUNA " << endl;
     cout << "==========================================" << endl;
     cout << "1. Nova hra" << endl;
     cout << "2. Ukoncit" << endl;
     cout << "Vase volba: ";
 }
 
-
 void vypisPribeh(string jmeno) {
     cout << endl << "--- PRIBEH ---" << endl;
-    cout << "Svet Aethelgardu upadl do chaosu. Tyran Cutalot ovladl zeme." << endl;
-    cout << "Ty, hrdino " << jmeno << ", jsi posledni nadeji tohoto sveta." << endl;
-    cout << "Ceka te dlouha cesta skrze monstra a vesnice." << endl;
+    cout << "Berounsko upadlo do chaosu." << endl;
+    cout << "Ty, hrdino " << jmeno << ", jsi posledni nadeji tohoto kraje." << endl;
+    cout << "Ceka te dlouha cesta skrze berounsky stoky." << endl;
     cout << "==========================================" << endl << endl;
 }
 
+void Beroun() {
+    cout << endl << "------------------------------------------" << endl;
+    cout << "Vstoupil jsi do vesnice: Beroun" << endl;
+    cout << "------------------------------------------" << endl;
+}
+
 int main() {
-    
+
     srand(time(0));
 
-    
+
     string jmeno;
     string profese;
     int hp, maxHp, mana, maxMana, utok, zlato, level, xp;
@@ -52,7 +56,7 @@ int main() {
 
     vypisPribeh(jmeno);
 
-    
+
     while (hotovo == false) {
         cout << "Vyber si svou tridu:" << endl;
         cout << "1. Paladin (Tank)" << endl;
@@ -61,7 +65,7 @@ int main() {
         cout << "Vase volba: ";
         cin >> volbaTridy;
 
-        
+
         switch (volbaTridy) {
         case 1:
             profese = "Paladin";
@@ -101,7 +105,83 @@ int main() {
     level = 1;
     xp = 0;
 
-    cout << endl << "Hrdina " << jmeno << " vstoupil do sveta Aethelgardu..." << endl;
+    cout << endl << "Hrdina " << jmeno << " vstoupil do koncu Berounska..." << endl;
+
+    Beroun();
+
+    int cenik[4][2] = {
+        {10, 5},
+        {25, 5},
+        {25, 5},
+        {30, 2}
+    };
+
+    bool vObchode = true;
+    while (vObchode == true) {
+        int volbaObchod;
+        cout << endl << "--- OBCHOD --- (Zlato: " << zlato << ")" << endl;
+        cout << "1. Leceni (" << cenik[0][1] << " HP) - " << cenik[0][0] << " zlata" << endl;
+        cout << "2. Zvysit Max HP (+ " << cenik[1][1] << ") - " << cenik[1][0] << " zlata" << endl;
+        cout << "3. Zvysit Max Manu (+ " << cenik[2][1] << ") - " << cenik[2][0] << " zlata" << endl;
+        cout << "4. Zvysit Utok (+ " << cenik[3][1] << ") - " << cenik[3][0] << " zlata" << endl;
+        cout << "5. Odejit z vesnice" << endl;
+        cout << "Vase volba: ";
+        cin >> volbaObchod;
+
+        switch (volbaObchod) {
+        case 1:
+            if (zlato >= cenik[0][0]) {
+                zlato -= cenik[0][0];
+                hp += cenik[0][1];
+                if (hp > maxHp) hp = maxHp;
+                cout << "Byl jsi vylecen. Aktualni HP: " << hp << endl;
+            }
+            else {
+                cout << "Nemas dost zlata!" << endl;
+            }
+            break;
+        case 2:
+            if (zlato >= cenik[1][0]) {
+                zlato -= cenik[1][0];
+                maxHp += cenik[1][1];
+                hp = maxHp;
+                cout << "Maximalni HP zvyseno na: " << maxHp << endl;
+            }
+            else {
+                cout << "Nemas dost zlata!" << endl;
+            }
+            break;
+        case 3:
+            if (zlato >= cenik[2][0]) {
+                zlato -= cenik[2][0];
+                maxMana += cenik[2][1];
+                mana = maxMana;
+                cout << "Maximalni mana zvysena na: " << maxMana << endl;
+            }
+            else {
+                cout << "Nemas dost zlata!" << endl;
+            }
+            break;
+        case 4:
+            if (zlato >= cenik[3][0]) {
+                zlato -= cenik[3][0];
+                utok += cenik[3][1];
+                cout << "Tvuj utok se zvysil na: " << utok << endl;
+            }
+            else {
+                cout << "Nemas dost zlata!" << endl;
+            }
+            break;
+        case 5:
+            vObchode = false;
+            break;
+        default:
+            cout << "Neplatna volba!" << endl;
+            break;
+        }
+    }
+
+    cout << endl << "Hrdina " << jmeno << " opousti vesnici a vydava se do temnych lesu..." << endl;
 
     return 0;
 }
