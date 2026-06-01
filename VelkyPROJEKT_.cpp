@@ -834,6 +834,519 @@ int main() {
             }
         }
     }
+    cout << endl << "------------------------------------------" << endl;
+    cout << "Aby jsi mohl dobit Berounsko musis dobit i Tetin..." << endl;
+    cout << "------------------------------------------" << endl;
+    cout << "Vydavas se na Tetin..." << endl;
 
+
+    string c1Jmeno = "Snejks z Kralova Dvora";
+    int c1Hp = 50;
+    int c1Utok = 10;
+
+    cout << endl << ">> 1. PREKAZKA: V zatacce pod kopcem stoji " << c1Jmeno << "!" << endl;
+    cout << "Snejks rve: 'To je vymysleny tohleto!' a dela karate. Ma " << c1Hp << " HP!" << endl;
+
+    while (hp > 0 && c1Hp > 0) {
+        int akce;
+        cout << endl << "--- TVUJ TAH (vs Snejks) ---" << endl;
+        cout << "1. Utok mecem" << endl;
+        cout << "2. Kriticky zasah (10 many)" << endl;
+        cout << "Tva volba: ";
+        cin >> akce;
+
+        if (akce == 1) {
+            c1Hp -= utok;
+            cout << "Zasahl jsi Snejkse mecem za " << utok << " dmg." << endl;
+        }
+        else if (akce == 2) {
+            if (mana >= 10) {
+                mana -= 10;
+                int ultraDmg = utok * 2 + 10;
+                c1Hp -= ultraDmg;
+                cout << "Magicky vyboj poslal Snejkse k zemi za " << ultraDmg << " dmg!" << endl;
+            }
+            else {
+                cout << "Nemas dost many! Jen jsi promachl." << endl;
+            }
+        }
+
+        cout << ">> STAV: " << jmeno << " [" << hp << " HP | " << mana << " Mana] vs " << c1Jmeno << " [" << c1Hp << " HP]" << endl;
+
+        if (c1Hp > 0) {
+            hp -= c1Utok;
+            cout << endl << c1Jmeno << " ti dal bombu za " << c1Utok << " dmg!" << endl;
+            cout << ">> STAV: " << jmeno << " [" << hp << " HP | " << mana << " Mana] vs " << c1Jmeno << " [" << c1Hp << " HP]" << endl;
+        }
+    }
+
+    if (hp <= 0) {
+        cout << "Snejks te nepustil ani do kopce a zbil te svojim karate skillem. HRA KONCI." << endl;
+        return 0;
+    }
+    cout << "-> Snejks dostal na budku a utekl smer Králuv Dvur!" << endl;
+
+    string c2Jmeno = "Karlos Vemola";
+    int c2Hp = 70;
+    int c2Utok = 12;
+
+    cout << endl << ">> 2. PREKAZKA: V pulce kopce na tebe vyskakuje " << c2Jmeno << "!" << endl;
+    cout << "Karlos krici: 'Lvi zerou prvni!' a natahuje se po tvem krku. Ma " << c2Hp << " HP!" << endl;
+
+    while (hp > 0 && c2Hp > 0) {
+        int akce;
+        cout << endl << "--- TVUJ TAH (vs Karlos) ---" << endl;
+        cout << "1. Utok mecem" << endl;
+        cout << "2. Kriticky zasah (10 many)" << endl;
+        cout << "Tva volba: ";
+        cin >> akce;
+
+        if (akce == 1) {
+            c2Hp -= utok;
+            cout << "Zasahl jsi Karlose mecem za " << utok << " dmg." << endl;
+        }
+        else if (akce == 2) {
+            if (mana >= 10) {
+                mana -= 10;
+                int ultraDmg = utok * 2 + 10;
+                c2Hp -= ultraDmg;
+                cout << "Magicky vyboj otrasl Terminatorem za " << ultraDmg << " dmg!" << endl;
+            }
+            else {
+                cout << "Nemas dost many! Jen jsi promachl." << endl;
+            }
+        }
+
+        cout << ">> STAV: " << jmeno << " [" << hp << " HP | " << mana << " Mana] vs " << c2Jmeno << " [" << c2Hp << " HP]" << endl;
+
+        if (c2Hp > 0) {
+            hp -= c2Utok;
+            cout << endl << c2Jmeno << " te hodil na zem a nasazuje kravatu za " << c2Utok << " dmg!" << endl;
+            cout << ">> STAV: " << jmeno << " [" << hp << " HP | " << mana << " Mana] vs " << c2Jmeno << " [" << c2Hp << " HP]" << endl;
+        }
+    }
+
+    if (hp <= 0) {
+        cout << "Karlos te uskrtil v gilotine a vzal si tvuj mec. HRA KONCI." << endl;
+        return 0;
+    }
+    cout << "-> Karlos dostal KO a pada z tetinskeho svahu!" << endl;
+
+    string c3Jmeno = "Psychopat Bejr";
+    int c3Hp = 60;
+    int c3Utok = 14;
+
+    cout << endl << ">> 3. PREKAZKA: Tesne pod vrcholem te s silenym revem napada " << c3Jmeno << "!" << endl;
+    cout << "Bejr toci zidli nad hlavou a rve na cele lesy. Ma " << c3Hp << " HP!" << endl;
+
+    while (hp > 0 && c3Hp > 0) {
+        int akce;
+        cout << endl << "--- TVUJ TAH (vs Bejr) ---" << endl;
+        cout << "1. Utok mecem" << endl;
+        cout << "2. Kriticky zasah (10 many)" << endl;
+        cout << "Tva volba: ";
+        cin >> akce;
+
+        if (akce == 1) {
+            c3Hp -= utok;
+            cout << "Zasahl jsi Bejra mecem za " << utok << " dmg." << endl;
+        }
+        else if (akce == 2) {
+            if (mana >= 10) {
+                mana -= 10;
+                int ultraDmg = utok * 2 + 10;
+                c3Hp -= ultraDmg;
+                cout << "Magicky vyboj zasahl Bejra primo do hrudi za " << ultraDmg << " dmg!" << endl;
+            }
+            else {
+                cout << "Nemas dost many! Jen jsi promachl." << endl;
+            }
+        }
+
+        cout << ">> STAV: " << jmeno << " [" << hp << " HP | " << mana << " Mana] vs " << c3Jmeno << " [" << c3Hp << " HP]" << endl;
+
+        if (c3Hp > 0) {
+            hp -= c3Utok;
+            cout << endl << c3Jmeno << " te pretahl skladaci zidli po zadech za " << c3Utok << " dmg!" << endl;
+            cout << ">> STAV: " << jmeno << " [" << hp << " HP | " << mana << " Mana] vs " << c3Jmeno << " [" << c3Hp << " HP]" << endl;
+        }
+    }
+
+    if (hp <= 0) {
+        cout << "Psychopat Bejr te zlikvidoval zidli a utekl za rozhodcim. HRA KONCI." << endl;
+        return 0;
+    }
+    cout << "-> Bejr utika do housti a nadava na nespravedlnost!" << endl;
+
+    cout << endl << "------------------------------------------" << endl;
+    cout << "DOSAHL JSI VRCHOLU: Tetin" << endl;
+    cout << "------------------------------------------" << endl;
+    cout << "Zbroj mas ponicenou, mec zubaty, ale jsi nahore. Vyhled na Berounku je uchvatny," << endl;
+    cout << "ale najednou se zeme otrese. Ze starobyleho hradiste vystupuje myticka postava," << endl;
+    cout << "ktera zde strazi berounske tradice a drzi obri kamenny torpedo..." << endl;
+
+    string bossJmeno = "Praotec Beroun (MINIBOSS)";
+    int bossHp = 200;
+    int bossUtok = 18;
+
+    cout << endl << "!!! LEGENDA OZIVLA !!! Stoji proti tobe obri stin s kamennym sutrem!" << endl;
+    cout << "Praotec Beroun te sleduje rudyma ocima. Ma celkem " << bossHp << " HP!" << endl;
+
+    while (hp > 0 && bossHp > 0) {
+        int akce;
+        cout << endl << "--- TVUJ TAH (vs MINIBOSS) ---" << endl;
+        cout << "1. Utok mecem" << endl;
+        cout << "2. Kriticky zasah (10 many)" << endl;
+        cout << "Tva volba: ";
+        cin >> akce;
+
+        if (akce == 1) {
+            bossHp -= utok;
+            cout << "Zasahl jsi Praotce Berouna mecem za " << utok << " dmg." << endl;
+        }
+        else if (akce == 2) {
+            if (mana >= 10) {
+                mana -= 10;
+                int ultraDmg = utok * 2 + 10;
+                bossHp -= ultraDmg;
+                cout << "Tvuj magicky blesk otrasl samotnou skalou a zasahl Praotce za " << ultraDmg << " dmg!" << endl;
+            }
+            else {
+                cout << "Nemas dost many! Jen jsi promachl." << endl;
+            }
+        }
+
+        cout << ">> STAV: " << jmeno << " [" << hp << " HP | " << mana << " Mana] vs " << bossJmeno << " [" << bossHp << " HP]" << endl;
+
+        if (bossHp > 0) {
+            hp -= bossUtok;
+            cout << endl << bossJmeno << " svihl kyjem a zasahl te silou berounske skaly za " << bossUtok << " dmg!" << endl;
+            cout << ">> STAV: " << jmeno << " [" << hp << " HP | " << mana << " Mana] vs " << bossJmeno << " [" << bossHp << " HP]" << endl;
+        }
+    }
+
+    if (hp <= 0) {
+        cout << "Praotec Beroun te pohrbil na tetinském hradisti. HRA KONCI." << endl;
+        return 0;
+    }
+    else {
+        cout << endl << "!!! TETIN BYL DOBYT !!!" << endl;
+        cout << "Praotec Beroun pada na kolena, uznava tvou silu a rozplyva se v ranni mlze." << endl;
+        cout << "Zanechal po sobe bajny poklad: 400 zlata a 250 zkusenosti!" << endl;
+        zlato += 400;
+        xp += 250;
+
+        if (xp >= 50) {
+            level++;
+            xp -= 50;
+            maxHp += 12; hp = maxHp;
+            maxMana += 6; mana = maxMana;
+            utok += 5;
+            cout << "!!! LEGENDARNI LEVEL UP !!! Nyni jsi level " << level << ". Tve statistiky brutalne vzrostly!" << endl;
+        }
+
+        cout << endl << "Chces se pred pokracovanim v ceste vratit na trh do Kralova Dvora?" << endl;
+        cout << "1. Ne, jit rovnou" << endl;
+        cout << "2. Yes, jit nakoupit zasoby za ukoristene zlato" << endl;
+        int volbaNavrat7;
+        cin >> volbaNavrat7;
+        if (volbaNavrat7 == 2) {
+            vObchodeKralov = true;
+            while (vObchodeKralov == true) {
+                int volbaObchodKralov;
+                cout << endl << "--- TRH KRALOVA DVORA --- (Zlato: " << zlato << ")" << endl;
+                cout << "1. Leceni - " << cenikKraluvDvur[0][0] << " zlata" << endl;
+                cout << "2. Max HP - " << cenikKraluvDvur[1][0] << " zlata" << endl;
+                cout << "3. Max Mana - " << cenikKraluvDvur[2][0] << " zlata" << endl;
+                cout << "4. Utok - " << cenikKraluvDvur[3][0] << " zlata" << endl;
+                cout << "5. Odejit" << endl;
+                cin >> volbaObchodKralov;
+                if (volbaObchodKralov == 1 && zlato >= cenikKraluvDvur[0][0]) { zlato -= cenikKraluvDvur[0][0]; hp = maxHp; cout << " HP plné!" << endl; }
+                else if (volbaObchodKralov == 2 && zlato >= cenikKraluvDvur[1][0]) { zlato -= cenikKraluvDvur[1][0]; maxHp += cenikKraluvDvur[1][1]; hp = maxHp; cout << " HP navýšeno!" << endl; }
+                else if (volbaObchodKralov == 3 && zlato >= cenikKraluvDvur[2][0]) { zlato -= cenikKraluvDvur[2][0]; maxMana += cenikKraluvDvur[2][1]; mana = maxMana; cout << " Mana navýšena!" << endl; }
+                else if (volbaObchodKralov == 4 && zlato >= cenikKraluvDvur[3][0]) { zlato -= cenikKraluvDvur[3][0]; utok += cenikKraluvDvur[3][1]; cout << " Útok navýšen!" << endl; }
+                else if (volbaObchodKralov == 5) vObchodeKralov = false;
+            }
+        }
+    }
+    cout << endl << "------------------------------------------" << endl;
+    cout << "Pokracujes na Karlstejn" << endl;
+    cout << "------------------------------------------" << endl;
+    cout << "Sestupujes z Tetina a vydavas se podel reky Berounky smerem k hradu Karlstejn." << endl;
+    cout << "Cesta je temna, hluboke lesy jsou plne nebezpeci a stvur!" << endl;
+
+    string c4Jmeno = "Divoky Berounsky Fetak";
+    int c4Hp = 65;
+    int c4Utok = 12;
+
+    cout << endl << ">> Z housti vybiha nastvany " << c4Jmeno << "!" << endl;
+    cout << "Fetka se riti primo na tebe. Ma " << c4Hp << " HP!" << endl;
+
+    while (hp > 0 && c4Hp > 0) {
+        int akce;
+        cout << endl << "--- TVUJ TAH ---" << endl;
+        cout << "1. Utok mecem" << endl;
+        cout << "2. Kriticky zasah (10 many)" << endl;
+        cout << "Tva volba: ";
+        cin >> akce;
+
+        if (akce == 1) {
+            c4Hp -= utok;
+            cout << "Zasahl jsi fetaka mecem za " << utok << " dmg." << endl;
+        }
+        else if (akce == 2) {
+            if (mana >= 10) {
+                mana -= 10;
+                int ultraDmg = utok * 2 + 10;
+                c4Hp -= ultraDmg;
+                cout << "Magicky vyboj srazil fetaka na bok za " << ultraDmg << " dmg!" << endl;
+            }
+            else {
+                cout << "Nemas dost many! Jen jsi promachl." << endl;
+            }
+        }
+
+        cout << ">> STAV: " << jmeno << " [" << hp << " HP | " << mana << " Mana] vs " << c4Jmeno << " [" << c4Hp << " HP]" << endl;
+
+        if (c4Hp > 0) {
+            hp -= c4Utok;
+            cout << endl << c4Jmeno << " ti vlepil za " << c4Utok << " dmg!" << endl;
+            cout << ">> STAV: " << jmeno << " [" << hp << " HP | " << mana << " Mana] vs " << c4Jmeno << " [" << c4Hp << " HP]" << endl;
+        }
+    }
+
+    if (hp <= 0) {
+        cout << "Divoky Fetak te ufetoval k smrti. HRA KONCI." << endl;
+        return 0;
+    }
+    cout << "-> Fetak padl, jdes dal!" << endl;
+
+    string c5Jmeno = "Wannabe samuraj";
+    int c5Hp = 55;
+    int c5Utok = 15;
+
+    cout << endl << ">>  Nad tvoji hlavou proletelo neco obriho. Je to " << c5Jmeno << "!" << endl;
+    cout << "Skocil ze skaly pred tebe. Ma " << c5Hp << " HP!" << endl;
+
+    while (hp > 0 && c5Hp > 0) {
+        int akce;
+        cout << endl << "--- TVUJ TAH ---" << endl;
+        cout << "1. Utok mecem" << endl;
+        cout << "2. Kriticky zasah (10 many)" << endl;
+        cout << "Tva volba: ";
+        cin >> akce;
+
+        if (akce == 1) {
+            c5Hp -= utok;
+            cout << "Zasahl jsi samuraje za " << utok << " dmg." << endl;
+        }
+        else if (akce == 2) {
+            if (mana >= 10) {
+                mana -= 10;
+                int ultraDmg = utok * 2 + 10;
+                c5Hp -= ultraDmg;
+                cout << "Blesk smazil jeho papirovou cepku za " << ultraDmg << " dmg!" << endl;
+            }
+            else {
+                cout << "Nemas dost many! samuraj se ti smeje." << endl;
+            }
+        }
+
+        cout << ">> STAV: " << jmeno << " [" << hp << " HP | " << mana << " Mana] vs " << c5Jmeno << " [" << c5Hp << " HP]" << endl;
+
+        if (c5Hp > 0) {
+            hp -= c5Utok;
+            cout << endl << c5Jmeno << " te bodnul katanou ukradenou v Kladne za " << c5Utok << " dmg!" << endl;
+            cout << ">> STAV: " << jmeno << " [" << hp << " HP | " << mana << " Mana] vs " << c5Jmeno << " [" << c5Hp << " HP]" << endl;
+        }
+    }
+
+    if (hp <= 0) {
+        cout << "Wannabe samuraj te probodnul. HRA KONCI." << endl;
+        return 0;
+    }
+    cout << "-> Samuraje si dodelal a pokracujes v ceste!" << endl;
+
+    string c6Jmeno = "Falesny Pruvodce Karlstejna";
+    int c6Hp = 80;
+    int c6Utok = 11;
+
+    cout << endl << ">> Pred podhradim te zastavuje podezrely muz v historickem kostymu: " << c6Jmeno << "!" << endl;
+    cout << "Rve: 'Kup si predrazeny listek nebo neprojdes!' a taha skryty nuz. Ma " << c6Hp << " HP!" << endl;
+
+    while (hp > 0 && c6Hp > 0) {
+        int akce;
+        cout << endl << "--- TVUJ TAH ---" << endl;
+        cout << "1. Utok mecem" << endl;
+        cout << "2. Kriticky zasah (10 many)" << endl;
+        cout << "Tva volba: ";
+        cin >> akce;
+
+        if (akce == 1) {
+            c6Hp -= utok;
+            cout << "Zasahl jsi pruvodce mecem za " << utok << " dmg." << endl;
+        }
+        else if (akce == 2) {
+            if (mana >= 10) {
+                mana -= 10;
+                int ultraDmg = utok * 2 + 10;
+                c6Hp -= ultraDmg;
+                cout << "Tva magie rozmetala jeho falesne vstupenky za " << ultraDmg << " dmg!" << endl;
+            }
+            else {
+                cout << "Nemas dost many! Jen jsi promachl." << endl;
+            }
+        }
+
+        cout << ">> STAV: " << jmeno << " [" << hp << " HP | " << mana << " Mana] vs " << c6Jmeno << " [" << c6Hp << " HP]" << endl;
+
+        if (c6Hp > 0) {
+            hp -= c6Utok;
+            cout << endl << c6Jmeno << " te bodl zezadu za " << c6Utok << " dmg!" << endl;
+            cout << ">> STAV: " << jmeno << " [" << hp << " HP | " << mana << " Mana] vs " << c6Jmeno << " [" << c6Hp << " HP]" << endl;
+        }
+    }
+
+    if (hp <= 0) {
+        cout << "Falesny pruvodce te okradl a nechal lezet v prikopu. HRA KONCI." << endl;
+        return 0;
+    }
+    cout << "-> Pruvodce utekl a ty konecne vchazis do nove lokace!" << endl;
+
+    cout << endl << "------------------------------------------" << endl;
+    cout << "ODEMCENA NOVA VESNICE: Podhradi Karlstejna" << endl;
+    cout << "------------------------------------------" << endl;
+    cout << "Dorazil jsi pod majestatni hrad. Mistni ti nabizeji" << endl;
+    cout << "to nejlepsi kralovske vybaveni, abys mohl hrad dobyt!" << endl;
+
+    int cenikKarlstejn[4][2] = {
+        {40, 35},  
+        {70, 20},  
+        {70, 15},  
+        {100, 10} 
+    };
+
+    bool vObchodeKarlstejn = true;
+    while (vObchodeKarlstejn == true) {
+        int volbaObchodKarlstejn;
+        cout << endl << "--- KRALOVSKY TRH KARLSTEJNA --- (Zlato: " << zlato << ")" << endl;
+        cout << "1. Kralovska medovina (Leceni +" << cenikKarlstejn[0][1] << " HP) - " << cenikKarlstejn[0][0] << " zlata" << endl;
+        cout << "2. Brneni cisare Karla (+ " << cenikKarlstejn[1][1] << " Max HP) - " << cenikKarlstejn[1][0] << " zlata" << endl;
+        cout << "3. Elixir moci (+ " << cenikKarlstejn[2][1] << " Max Manu) - " << cenikKarlstejn[2][0] << " zlata" << endl;
+        cout << "4. Mec s drahokamy (+ " << cenikKarlstejn[3][1] << " Utok) - " << cenikKarlstejn[3][0] << " zlata" << endl;
+        cout << "5. Vyrazit do hradu na BRUTALNI BITVU" << endl;
+        cout << "Vase volba: ";
+        cin >> volbaObchodKarlstejn;
+
+        switch (volbaObchodKarlstejn) {
+        case 1:
+            if (zlato >= cenikKarlstejn[0][0]) {
+                zlato -= cenikKarlstejn[0][0];
+                hp += cenikKarlstejn[0][1];
+                if (hp > maxHp) hp = maxHp;
+                cout << "Citis se skvele. Aktualni HP: " << hp << endl;
+            }
+            else {
+                cout << "Nemas dost zlata!" << endl;
+            }
+            break;
+        case 2:
+            if (zlato >= cenikKarlstejn[1][0]) {
+                zlato -= cenikKarlstejn[1][0];
+                maxHp += cenikKarlstejn[1][1];
+                hp = maxHp;
+                cout << "Maximalni HP zvyseno na: " << maxHp << endl;
+            }
+            else {
+                cout << "Nemas dost zalta!" << endl;
+            }
+            break;
+        case 3:
+            if (zlato >= cenikKarlstejn[2][0]) {
+                zlato -= cenikKarlstejn[2][0];
+                maxMana += cenikKarlstejn[2][1];
+                mana = maxMana;
+                cout << "Maximalni mana zvysena na: " << maxMana << endl;
+            }
+            else {
+                cout << "Nemas dost zlata!" << endl;
+            }
+            break;
+        case 4:
+            if (zlato >= cenikKarlstejn[3][0]) {
+                zlato -= cenikKarlstejn[3][0];
+                utok += cenikKarlstejn[3][1];
+                cout << "Tvuj utok brutalne vzrostl na: " << utok << endl;
+            }
+            else {
+                cout << "Nemas dost zlata!" << endl;
+            }
+            break;
+        case 5:
+            vObchodeKarlstejn = false;
+            break;
+        default:
+            cout << "Neplatna volba!" << endl;
+            break;
+        }
+    }
+
+    cout << endl << "------------------------------------------" << endl;
+    cout << "UTOK NA HRAD: Dobyvani Karlstejna" << endl;
+    cout << "------------------------------------------" << endl;
+    cout << "Vylomil jsi branu a mlatis hradni straze levu i pravou." << endl;
+    cout << "Vstupujes do kaple svateho Krize, kde na tebe ceka samotny boss hradu," << endl;
+    cout << "kteri ovladl poklady Koruny ceske!" << endl;
+
+    string boss2Jmeno = "Zly Kastelan Karlstejna (MINIBOSS)";
+    int boss2Hp = 220;
+    int boss2Utok = 20;
+
+    cout << endl << "!!! BITVA O TRUN !!! Proti tobe stoji " << boss2Jmeno << " v tezke zbroji!" << endl;
+    cout << "Kastelan rve: 'Zadne zeny ani hrdinove sem nesmi!' Ma celkem " << boss2Hp << " HP!" << endl;
+
+    while (hp > 0 && boss2Hp > 0) {
+        int akce;
+        cout << endl << "--- TVUJ TAH (vs MINIBOSS KARLSTEJN) ---" << endl;
+        cout << "1. Utok mecem" << endl;
+        cout << "2. Kriticky zasah (10 many)" << endl;
+        cout << "Tva volba: ";
+        cin >> akce;
+
+        if (akce == 1) {
+            boss2Hp -= utok;
+            cout << "Zasahl jsi Kastelana mecem za " << utok << " dmg." << endl;
+        }
+        else if (akce == 2) {
+            if (mana >= 10) {
+                mana -= 10;
+                int ultraDmg = utok * 2 + 10;
+                boss2Hp -= ultraDmg;
+                cout << "Tvuj magicky blesk rozrazil stiny kaple a zasahl Kastelana za " << ultraDmg << " dmg!" << endl;
+            }
+            else {
+                cout << "Nemas dost many! Jen jsi promachl." << endl;
+            }
+        }
+
+        cout << ">> STAV: " << jmeno << " [" << hp << " HP | " << mana << " Mana] vs " << boss2Jmeno << " [" << boss2Hp << " HP]" << endl;
+
+        if (boss2Hp > 0) {
+            hp -= boss2Utok;
+            cout << endl << boss2Jmeno << " te sekl hradni halapartnou za " << boss2Utok << " dmg!" << endl;
+            cout << ">> STAV: " << jmeno << " [" << hp << " HP | " << mana << " Mana] vs " << boss2Jmeno << " [" << boss2Hp << " HP]" << endl;
+        }
+    }
+
+    if (hp <= 0) {
+        cout << "Zly Kastelan te shodil z hradeb. HRA KONCI." << endl;
+        return 0;
+    }
+    else {
+        cout << endl << "==================================================================" << endl;
+        cout << "   VITEZSTVI! Karlstejn byl uspesne dobyt a osvobozen!" << endl;
+        cout << "==================================================================" << endl;
+        cout << "Zly Kastelan pada na kolena a ty prebiras klice od celeho hradu." << endl;
+    }
     return 0;
 }
